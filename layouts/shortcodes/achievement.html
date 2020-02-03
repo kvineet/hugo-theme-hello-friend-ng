@@ -1,0 +1,18 @@
+{{ if .IsNamedParams }} {{- $logoclass := default "xbox-icon xbox-logo" (.Get "logo") -}} {{- $legendClass := default "xbox-icon xbox-gamerscore" (.Get "icon") -}}
+
+<div class="achievement-container">
+    <div class="achievement-banner animated ">
+        <div class="achievement-loader"></div>
+        <div class="achievement-loader"></div>
+        <div class="achievement-loader"></div>
+        <div class="achievement-loader"></div>
+        <div class="achievement-loader"></div>
+        <div class="achievement-trophy {{ $logoclass -}}"></div>
+
+        <div class="achievement-text">
+            <p class="achievement-notification">Achievement Unlocked</p>
+            <p class="achievement-name"><i class="{{- $legendClass -}}"></i> {{ .Inner }}</p>
+        </div>
+    </div>
+</div>
+{{ end }}
